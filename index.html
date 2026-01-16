@@ -507,6 +507,29 @@
             flex-grow: 1.1;
         }
 
+        /* Full Width Container */
+        .full-width-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .full-width-section {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #E8EDF2;
+            margin-bottom: 2rem;
+        }
+
+        .full-width-section h3 {
+            margin-top: 1.5rem;
+        }
+
+        .full-width-section h3:first-child {
+            margin-top: 0;
+        }
+
         /* Minimalist Footer */
         footer {
             background: var(--columbia-navy);
@@ -568,7 +591,7 @@
     <header>
         <div class="container">
             <h1 class="course-title">Applied Machine Learning</h1>
-            <h2 class="course-subtitle">COMS 4995 W031</h2>
+            <h2 class="course-subtitle">COMS 4995 W31</h2>
             <p class="university-name">Columbia University • Spring 2026</p>
         </div>
     </header>
@@ -599,7 +622,7 @@
                         </div>
                         <div class="quick-info-card">
                             <div class="label">📍 Location</div>
-                            <div class="value">Fayerweather Hall</div>
+                            <div class="value">Fayerweather 310</div>
                         </div>
                         <div class="quick-info-card">
                             <div class="label">💳 Credits</div>
@@ -614,7 +637,18 @@
                     <h3>About This Course</h3>
                     <p><b>Applied Machine Learning</b> is not just about training models on clean datasets. In practice, ML systems operate inside complex, messy environments shaped by delayed feedback, data drift, and business constraints.</p>
 
-                    <p style="margin-top: 1rem;">This course bridges the gap between algorithms and production. We begin with the <b>"Classic Stack"</b> (Linear Models, Trees) and move to the <b>"Modern GenAI Stack"</b> (LLMs, RAG, Agents). We treat models not as mathematical artifacts, but as powerful components to be fine-tuned, chained, and deployed to survive real-world traffic.</p>
+                    <p style="margin-top: 1rem;">This course bridges the gap between algorithms and production. We begin with the <b>"Classic Stack"</b> (Linear Models, Trees) and move to the <b>"Modern GenAI Stack"</b> (LLMs, RAG, Agents). Unlike theoretical courses, we emphasize problem framing, system design, and failure analysis. We treat models not as mathematical artifacts, but as powerful components to be fine-tuned, chained, and deployed to survive real-world traffic.</p>
+
+                    <div style="margin-top: 2rem; background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%); padding: 1.75rem; border-radius: 16px; border-left: 4px solid var(--columbia-navy);">
+                        <h4 style="color: var(--columbia-navy); margin-bottom: 0.75rem; font-size: 1.1rem;">💡 Note on Deep Learning & Math</h4>
+                        <p style="font-size: 1rem; color: var(--columbia-dark-gray);">This course prioritizes Deep Learning and LLMs as the core of modern ML engineering. We cover mathematical foundations specifically to ensure a "white-box" understanding necessary for debugging and optimization, focusing on <b>applied engineering logic</b> rather than theoretical derivation.</p>
+                    </div>
+
+                    <div style="margin-top: 1.5rem; background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); padding: 1.75rem; border-radius: 16px; border-left: 4px solid var(--accent-amber);">
+                        <h4 style="color: var(--columbia-navy); margin-bottom: 0.75rem; font-size: 1.1rem;">💬 Note from the Instructor</h4>
+                        <p style="font-size: 1rem; color: var(--columbia-dark-gray);">My goal for this course is simple: <b>to bridge the gap between academic theory and the reality of shipping AI at scale</b>. As a practitioner leading various cutting-edge projects, I have designed this curriculum to simulate the rigorous standards of a top-tier tech environment.</p>
+                        <p style="font-size: 1rem; color: var(--columbia-dark-gray); margin-top: 1rem;">You will find some policies in this syllabus strictly enforced (e.g., code quality, system design constraints). <b>Please understand that this rigor is not meant to penalize you, but to prepare you.</b> I want you to make mistakes here - in a safe, supportive classroom - so you do <b>not</b> make them in your technical interviews. My TA team and I are fully committed to your success and are here to help you land your dream offer in this competitive market.</p>
+                    </div>
 
                     <h3>🎯 Learning Objectives</h3>
                     <ul style="margin-left: 1.5rem; margin-top: 1rem; display: grid; grid-template-columns: 1fr; gap: 0.75rem;">
@@ -720,67 +754,6 @@
                     </table>
                 </section>
 
-                <!-- Assignments & Grading -->
-                <section class="section" id="assignments">
-                    <h2>✍️ Assignments & Grading</h2>
-                    <div class="grade-chart">
-                        <div class="grade-bar">
-                            <div class="grade-segment" style="width: 60%; background: var(--accent-blue);">60%</div>
-                            <div class="grade-segment" style="width: 20%; background: var(--columbia-secondary);">20%</div>
-                            <div class="grade-segment" style="width: 20%; background: var(--warning-orange);">20%</div>
-                        </div>
-                    </div>
-                    <div style="display: flex; justify-content: space-around; margin-top: 1rem; font-size: 0.85rem; font-weight: 700;">
-                        <span style="color: var(--accent-blue);">● Homework Assignments (60%)</span>
-                        <span style="color: var(--columbia-secondary);">● Midterm Exam (20%)</span>
-                        <span style="color: var(--warning-orange);">● Final Exam (20%)</span>
-                    </div>
-
-                    <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
-                        <div style="background: var(--gradient-subtle); padding: 1.5rem; border-radius: 20px; border: 1px solid #E2E8F0;">
-                            <h4 style="color: var(--columbia-navy); margin-bottom: 0.5rem;">📝 Homeworks (60%)</h4>
-                            <p style="font-size: 0.9rem; color: var(--columbia-gray);">3 comprehensive assignments covering feature engineering, modeling, and evaluation. Submit code repository + brief summary.</p>
-                        </div>
-                        <div style="background: var(--gradient-subtle); padding: 1.5rem; border-radius: 20px; border: 1px solid #E2E8F0;">
-                            <h4 style="color: var(--columbia-navy); margin-bottom: 0.5rem;">💪 Midterm (20%)</h4>
-                            <p style="font-size: 0.9rem; color: var(--columbia-gray);">In-class, closed-book exam covering fundamental concepts from the first half of the course.</p>
-                        </div>
-                        <div style="background: var(--gradient-subtle); padding: 1.5rem; border-radius: 20px; border: 1px solid #E2E8F0;">
-                            <h4 style="color: var(--columbia-navy); margin-bottom: 0.5rem;">🎯 Final Exam (20%)</h4>
-                            <p style="font-size: 0.9rem; color: var(--columbia-gray);">In-class, closed-book exam covering advanced concepts and holistic understanding of the material.</p>
-                        </div>
-                    </div>
-
-                    <div style="margin-top: 2rem; background: #FFFBEB; padding: 1.5rem; border-radius: 20px; border: 1px solid #FEF3C7;">
-                        <h4 style="color: var(--columbia-navy); margin-bottom: 0.75rem;">📊 Grading Scale</h4>
-                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; font-size: 0.9rem;">
-                            <div><b>A:</b> 90-100%</div>
-                            <div><b>B:</b> 80-89%</div>
-                            <div><b>C:</b> 70-79%</div>
-                            <div><b>D:</b> 69% or below</div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="section" id="policies">
-                    <h2>📜 Course Policies</h2>
-
-                    <h3>Attendance</h3>
-                    <p>Attendance is <b>optional and not graded</b>. We treat you as adults; you do not need to email the instructor to report or explain absences. However, lectures will be streamed via Zoom and recorded on a <b>"best effort" basis</b> - technical failures may result in loss of both the live stream and recording. <b>We strongly recommend attending in-person</b> to guarantee access to the material.</p>
-
-                    <h3>Late Work</h3>
-                    <p>Late submissions will be accepted up to <b>24 hours</b> after the original deadline with a <b>10% penalty</b>. Work submitted more than 24 hours past the deadline will <b>not be accepted</b> (graded as 0).</p>
-                    <p style="margin-top: 0.75rem;"><b>Exceptions:</b> We understand that life happens. If you have a busy interview schedule, health issue, or other emergency, please email the instructor <b>before the deadline</b>. We are generally very accommodating to reasonable requests.</p>
-
-                    <h3>Re-grading</h3>
-                    <p>Regrade requests must be submitted in writing to the TAs <b>within one week</b> of the grade release. Note that requesting a regrade triggers a <b>full review</b> of your assignment, and your score may increase, decrease, or remain the same.</p>
-
-                    <h3>AI Policy</h3>
-                    <p>Use of AI tools (ChatGPT, Claude, Gemini, etc.) is <b>fully permitted</b> for all assignments. You are expected to verify AI-generated outputs. Code that crashes or logic that fails will be graded accordingly, <b>regardless of its origin</b>.</p>
-
-                    <p style="margin-top: 0.75rem;"><i>Philosophy: This course simulates an industry environment. We embrace modern AI tools for implementation, while prioritizing strict evaluation of your fundamental understanding through exams.</i></p>
-                </section>
-
             </div>
 
             <!-- Enhanced Sidebar -->
@@ -804,11 +777,11 @@
                         </li>
                         <li>
                             <div class="name">Midterm Exam</div>
-                            <div class="email">TBD (March)</div>
+                            <div class="email">Mar 2, 2026</div>
                         </li>
                         <li>
-                            <div class="name">Final Project Due</div>
-                            <div class="email">May 2026</div>
+                            <div class="name">Final Exam</div>
+                            <div class="email">Apr 27, 2026</div>
                         </li>
                     </div>
                 </div>
@@ -844,7 +817,8 @@
                 <!-- Office Hours -->
                 <div class="sidebar-card">
                     <h3>🕐 Office Hours</h3>
-                    <p>Office hours have been updated for the new course.</p>
+                    <p><b>TA Office Hours:</b> TBD, updated on Ed</p>
+                    <p style="margin-top: 0.5rem;"><b>Optional Recitation:</b> TA-led sessions for coding and math refreshers</p>
                 </div>
 
                 <!-- Quick Links -->
@@ -855,7 +829,7 @@
                         <a href="https://courseworks2.columbia.edu/courses/234147" target="_blank">📚 Courseworks</a>
                         <a href="https://huggingface.co/" target="_blank">🤗 Hugging Face</a>
                     </div>
-                </div>   
+                </div>
 
                 <!-- Resources Sidebar -->
                 <div class="sidebar-card" id="resources">
@@ -875,12 +849,96 @@
                 </div>
             </div>
         </div>
+
+        <!-- Full Width Sections Below -->
+        <div class="full-width-container">
+            <!-- Assignments & Grading -->
+            <section class="section full-width-section" id="assignments">
+                <h2>✍️ Assignments & Grading</h2>
+                <div class="grade-chart">
+                    <div class="grade-bar">
+                        <div class="grade-segment" style="width: 60%; background: var(--accent-teal);">60%</div>
+                        <div class="grade-segment" style="width: 20%; background: var(--columbia-navy);">20%</div>
+                        <div class="grade-segment" style="width: 20%; background: var(--warning-orange);">20%</div>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-around; margin-top: 1rem; font-size: 0.9rem; font-weight: 700;">
+                    <span style="color: var(--accent-teal);">● Homework Assignments (60%)</span>
+                    <span style="color: var(--columbia-navy);">● Midterm Exam (20%)</span>
+                    <span style="color: var(--warning-orange);">● Final Exam (20%)</span>
+                </div>
+
+                <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
+                    <div style="background: var(--gradient-subtle); padding: 1.5rem; border-radius: 20px; border: 1px solid #E2E8F0;">
+                        <h4 style="color: var(--columbia-navy); margin-bottom: 0.5rem;">📝 Homeworks (60%)</h4>
+                        <p style="font-size: 0.9rem; color: var(--columbia-gray);">3 comprehensive assignments covering feature engineering, modeling, and evaluation. Submit code repository + brief summary.</p>
+                    </div>
+                    <div style="background: var(--gradient-subtle); padding: 1.5rem; border-radius: 20px; border: 1px solid #E2E8F0;">
+                        <h4 style="color: var(--columbia-navy); margin-bottom: 0.5rem;">💪 Midterm (20%)</h4>
+                        <p style="font-size: 0.9rem; color: var(--columbia-gray);">In-class, closed-book exam covering fundamental concepts from the first half of the course.</p>
+                    </div>
+                    <div style="background: var(--gradient-subtle); padding: 1.5rem; border-radius: 20px; border: 1px solid #E2E8F0;">
+                        <h4 style="color: var(--columbia-navy); margin-bottom: 0.5rem;">🎯 Final Exam (20%)</h4>
+                        <p style="font-size: 0.9rem; color: var(--columbia-gray);">In-class, closed-book exam covering advanced concepts and holistic understanding of the material.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div style="background: #FFFBEB; padding: 1.5rem; border-radius: 20px; border: 1px solid #FEF3C7;">
+                        <h4 style="color: var(--columbia-navy); margin-bottom: 0.75rem;">📊 Grading Scale & Curve</h4>
+                        <p style="font-size: 0.95rem; color: var(--columbia-dark-gray);">Final letter grades will be determined based on your performance <b>relative to the class distribution</b>. We do not use fixed percentage buckets. The instructor reserves the right to apply an overall curve based on the collective performance of the class.</p>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%); padding: 1.5rem; border-radius: 20px; border: 1px solid #A7F3D0;">
+                        <h4 style="color: var(--columbia-navy); margin-bottom: 0.75rem;">📋 Scope of Assessments</h4>
+                        <p style="font-size: 0.95rem; color: var(--columbia-dark-gray);">Students are responsible for all material: lectures, slides, homework, readings, code examples, case studies, and Ed posts. <b>That said, we are not here to trick you.</b> Our exams prioritize <b>deep engineering intuition</b> over trivial memorization.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Course Policies -->
+            <section class="section full-width-section" id="policies">
+                <h2>📜 Course Policies</h2>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div>
+                        <h3>Zoom Support</h3>
+                        <p>Lectures will be streamed via Zoom and recorded on a <b>"best effort" basis</b>. Technical failures may result in the loss of both the live stream and the recording.</p>
+                        <p style="margin-top: 0.5rem;"><b>Recommendation:</b> We strongly recommend attending in-person to guarantee access to the material.</p>
+
+                        <h3>Attendance</h3>
+                        <p>Attendance is <b>optional and not graded</b>. We treat you as adults; you do not need to email the instructor to report or explain absences.</p>
+
+                        <h3>Late Work</h3>
+                        <p>Late submissions will be accepted up to <b>24 hours</b> after the original deadline with a <b>10% penalty</b>. Work submitted more than 24 hours past the deadline will <b>not be accepted</b>.</p>
+                        <p style="margin-top: 0.5rem;"><b>Exceptions:</b> We understand that life happens. Please submit a request via the Google Form (announced in Ed) <b>before the deadline</b>.</p>
+                    </div>
+                    <div>
+                        <h3>Re-grading</h3>
+                        <p>Regrade requests must be submitted in writing to the TAs <b>within one week</b> of the grade release. Note that requesting a regrade triggers a <b>full review</b> of your assignment.</p>
+
+                        <h3>AI Policy</h3>
+                        <p>Use of AI tools (ChatGPT, Claude, Gemini, etc.) is <b>fully permitted</b> for all assignments. You are expected to verify AI-generated outputs. Code that crashes or logic that fails will be graded accordingly.</p>
+                        <p style="margin-top: 0.5rem;">While AI tools are permitted, <b>plagiarism of other students' work is strictly prohibited</b>. You are personally responsible for the accuracy and logic of your submissions.</p>
+
+                        <h3>♿ Accessibility</h3>
+                        <p>If you have been certified by Disability Services (ODS), please contact <b>Robert Kramer</b> at <a href="mailto:rk3281@columbia.edu">rk3281@columbia.edu</a> to arrange accommodations. Once confirmed with DSI, notify the TAs so we can update exam timer settings.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Thoughts -->
+            <section class="section full-width-section" id="final-thoughts" style="background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%); border-radius: 16px; margin: 0 3rem;">
+                <h2>💫 Final Thoughts</h2>
+                <p style="font-size: 1.15rem; line-height: 1.9; color: var(--columbia-dark-gray); max-width: 900px;">This course moves fast and covers a lot of ground. It will be challenging, but it will also be rewarding. Remember that <b>you are not alone in this journey</b> - the teaching staff and I are your resources.</p>
+                <p style="font-size: 1.15rem; line-height: 1.9; color: var(--columbia-dark-gray); margin-top: 1rem; max-width: 900px;">We value communication and transparency, so please utilize <b>Ed Discussion</b> and <b>Office Hours</b>. <b style="color: var(--columbia-navy);">Let's build something amazing together this semester.</b></p>
+            </section>
+        </div>
     </main>
 
     <footer>
         <div class="container">
             <p>&copy; 2026 Columbia University - Applied Machine Learning</p>
-            <p>COMS 4995 W031 | Spring 2026</p>
+            <p>COMS 4995 W31 | Spring 2026</p>
         </div>
     </footer>
 </body>
